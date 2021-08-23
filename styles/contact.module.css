@@ -1,0 +1,63 @@
+.pageWrapper {
+  width: 100%;
+  padding: 100px 1rem;
+  background-image: url('../public/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pageContainer {
+  padding: 1.5rem;
+  background-color: var(--white);
+  max-width: 970px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.pageContainer h1 {
+  color: var(--dark-grey);
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input,
+.form textarea {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form label {
+  display: none;
+}
+
+.submit {
+  align-self: flex-start;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.contactDetails {
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.contactDetails li {
+  color: var(--dark-grey);
+  list-style-type: none;
+  padding: 2px 0;
+}
+
+@media screen and (max-width: 720px) {
+  .pageWrapper {
+    padding: 1rem;
+  }
+}

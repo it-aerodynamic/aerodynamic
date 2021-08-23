@@ -1,0 +1,62 @@
+.footer {
+  background-color: var(--black);
+  border-top: 2px solid var(--orange);
+}
+
+.footerWrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 1rem;
+}
+
+.leftPanel > div {
+  display: block !important;
+}
+
+.rightPanel h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.copyright {
+  margin: 0;
+  text-align: right;
+}
+
+.siteLinks {
+  list-style-type: none;
+  padding: 0;
+}
+
+.subscriptionForm label {
+  color: var(--white);
+  display: block;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+}
+.subscriptionForm input[type='text'] {
+  background: #141316;
+  border: 2px solid #969696;
+  border-radius: 5px;
+  margin-right: 0.7rem;
+  min-width: 350px;
+  padding: 0.5rem 1rem;
+}
+
+.bottomPanel {
+  border-top: solid 1px var(--dark-grey);
+  padding-top: 1.5em;
+  margin: 1.5rem 0 0.5rem 0;
+  width: 100%;
+}
+
+.bottomPanel p {
+  margin-bottom: 0;
+}

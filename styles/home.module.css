@@ -1,0 +1,34 @@
+.homeContainer {
+  background-color: #141316;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1300px;
+  position: relative;
+  z-index: 2;
+}
+
+.leftPanel {
+  border-radius: 10px;
+  max-width: 450px;
+  padding: 24px;
+}
+
+.leftPanel h2 {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 780px) {
+  .homeContainer {
+    flex-direction: row;
+    margin: -50px auto 2rem auto;
+  }
+
+  .servicesContainer {
+    margin-top: -50px;
+  }
+}

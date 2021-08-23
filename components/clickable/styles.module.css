@@ -1,0 +1,21 @@
+.link {
+  color: var(--light-grey);
+}
+
+.largeBordered {
+  border-radius: 5px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  display: inline-block;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.largeBordered:hover,
+.largeBordered:focus {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
