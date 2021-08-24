@@ -8,7 +8,7 @@ import {
 const config = {
   apiVersion: '2021-03-25', // use a UTC date string
   dataset: 'production',
-  projectId: 'u828exiy',
+  projectId: 'jz19vor0',
   useCdn: process.env.NODE_ENV === 'production',
 };
 
