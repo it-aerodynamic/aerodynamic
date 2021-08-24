@@ -13,11 +13,11 @@ interface HeaderProps {
   sanitySiteProps: SanitySiteProps;
 };
 
-const Header = ({ sanitySiteProps}: HeaderProps) => {
+const Header = ({ sanitySiteProps }: HeaderProps) => {
   const [show, setShow] = useState(false);
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
 
-  const { caption, src } = sanitySiteProps.imageObject;
+  const { caption, src } = sanitySiteProps?.imageObject || {};
 
   const menuClickedHandler = () => {
     setHamburgerClicked(!hamburgerClicked);
@@ -35,24 +35,24 @@ const Header = ({ sanitySiteProps}: HeaderProps) => {
     };
   }, []);
 
-  const menuIcon = hamburgerClicked ? faTimes : faBars; 
+  const menuIcon = hamburgerClicked ? faTimes : faBars;
 
   return (
-  <div className={classNames({[styles.hidden]: show },styles.navWrapper)}>
-    <nav className={styles.navbarItems}>
-        <a href="/"><h1 className={styles.navbarLogo}><Image alt={caption} height="61" src={src} width="203" /></h1></a>
+    <div className={classNames({ [styles.hidden]: show }, styles.navWrapper)}>
+      <nav className={styles.navbarItems}>
+        {src && caption && <a href="/"><h1 className={styles.navbarLogo}><Image alt={caption} height="61" src={src} width="203" /></h1></a>}
         <div className={styles.menuIcon} onClick={menuClickedHandler}>
           <FontAwesomeIcon icon={menuIcon} />
         </div>
         <div className={styles.rightContent}>
-          <ul className={classNames(styles.navMenu, {[styles.menuActive]: hamburgerClicked },)}>
-            <li className={styles.listItem}><a className={styles.navLinks} href="/contact"/>Contact</li>
+          <ul className={classNames(styles.navMenu, { [styles.menuActive]: hamburgerClicked },)}>
+            <li className={styles.listItem}><a className={styles.navLinks} href="/contact" />Contact</li>
           </ul>
           {/* <h2 className={styles.tagLine}>Safety in the sky, starts from the ground </h2> */}
           <Clickable className={styles.contactButton} to="/contact" type="largeBordered">Contact</Clickable>
-        </div>  
-    </nav>
-  </div>
+        </div>
+      </nav>
+    </div>
   );
 };
 

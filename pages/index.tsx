@@ -10,7 +10,7 @@ import Service from '../components/service';
 import styles from '../styles/home.module.css';
 
 const HomePage = ({ homeData }) => {
-  if (isEmpty(homeData)){
+  if (isEmpty(homeData)) {
     return null;
   }
   const { description, hero: { slides }, services, title } = homeData;
@@ -21,7 +21,7 @@ const HomePage = ({ homeData }) => {
         <meta name="description" content="This is the page description" />
       </Head>
       <div className={styles.pageWrapper}>
-        <ImageCarousel slides={slides}/>
+        <ImageCarousel slides={slides} />
         <div className={styles.homeContainer}>
           <div className={styles.leftPanel}>
             <Fade duration={2000}>
@@ -45,11 +45,12 @@ const HomePage = ({ homeData }) => {
 export default HomePage;
 
 export const getServerSideProps = async () => {
-  const result = await getClient(false).fetch(homeQuery);
-  const homeData = head(result);
-  return {
-    props: {
-      homeData    
-    },
+  try {
+    const result = await getClient(false).fetch(homeQuery);
+    console.log('result', result)
+    const homeData = !isEmpty(result) ? head(result) : null;
+    return { props: { homeData: homeData } };
+  } catch (err) {
+    console.log(err);
   }
 }

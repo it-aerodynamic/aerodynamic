@@ -20,11 +20,14 @@ const App = ({ Component, pageProps, sanitySiteProps }: LayoutProps) => (
   </Layout>
 );
 
-
 App.getInitialProps = async () => {
-  const sanitySiteData = await getClient(false).fetch(websiteConfigQuery);
-  const sanitySiteProps = head(sanitySiteData);
-  return { sanitySiteProps };
+  try {
+    const sanitySiteData = await getClient(false).fetch(websiteConfigQuery);
+    const sanitySiteProps = head(sanitySiteData);
+    return { sanitySiteProps };
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export default App;
