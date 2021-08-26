@@ -47,7 +47,6 @@ export default HomePage;
 export const getServerSideProps = async () => {
   try {
     const result = await getClient(false).fetch(homeQuery);
-    console.log('result', result)
     const homeData = !isEmpty(result) ? head(result) : null;
     return { props: { homeData: homeData } };
   } catch (err) {

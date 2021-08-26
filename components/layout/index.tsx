@@ -10,11 +10,11 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, sanitySiteProps }: LayoutProps) => (
-  <>
+  <div className={styles.bodyWrapper}>
     <Header sanitySiteProps={sanitySiteProps} />
     <main className={styles.main}>{children}</main>
     <Footer />
-  </>
+  </div>
 );
 
 export default Layout;
