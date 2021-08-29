@@ -12,22 +12,29 @@
   text-align: center;
   top: 0;
   transform: translateX(-50%);
-  width: 300px;
+  width: 90%;
   z-index: 2;
 }
 
 .textWrapper h2 {
-  color: var(--white);
-  font-size: 2rem;
+  color: var(--orange);
+  font-size: 2.8rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 0px;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .textWrapper h3 {
   color: var(--white);
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 29px;
+  font-weight: 300;
+}
+
+.textWrapper h2,
+.textWrapper h3 {
+  font-style: italic;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .imageWrapper {
@@ -40,6 +47,6 @@
 
 @media screen and (max-width: 720px) {
   .textWrapper {
-    padding-top: 9%;
+    display: none;
   }
 }
