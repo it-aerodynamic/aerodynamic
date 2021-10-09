@@ -1,26 +1,24 @@
-import { startCase } from 'lodash/fp';
 import React, { useState } from 'react';
 import Head from 'next/head';
+import emailjs from 'emailjs-com';
 
 import styles from '../styles/contact.module.css';
-
-const formFields = [
-  { type: 'text', name: "name" },
-  { type: 'email', name: "email" },
-  { type: 'tel', name: "phone" },
-];
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
 
-  // const handleSubmit = async (event: React.SyntheticEvent) => {
-  //   event.preventDefault();
-  //   const data = { name, email, message };
-  //   const rawData = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data)});
-  //   const formData = await rawData.json();    
-  // };
+  const handleSubmit = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    const templateParams = { 
+      from_name: name, 
+      email, 
+      phone, 
+      message 
+    };
+  };
 
   return (
     <>
@@ -38,33 +36,40 @@ const Contact = () => {
             <li>Keilor Park VIC 3042 </li>
             <li>AUSTRALIA</li>
           </ul>
-          <form name="contact" action="/success" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="text" id="name" name="name" />
-            <button className={styles.submit} type="submit">Send</button>
-          </form>
-            {/* {formFields.map(({ type, name }) => {
-              return (
-                <React.Fragment key={name}>
-                  <label htmlFor={name}>{startCase(name)}:</label>
-                  <input 
-                    id={name} 
-                    name={name}
-                    type={type} 
-                    placeholder={startCase(name)} 
-                    // onChange={(event: React.FormEvent<HTMLInputElement>) => setName(event.currentTarget.value)} 
-                  />
-                </React.Fragment>
-              );
-            })} */}
-{/* 
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label htmlFor='name'>Name:</label>
+            <input 
+              id='name'
+              name='name'
+              type='text' 
+              placeholder='Name'
+              onChange={(event: React.FormEvent<HTMLInputElement>) => setName(event.currentTarget.value)} 
+            />
+             <label htmlFor='email'>Email:</label>
+            <input 
+              id='email'
+              name='email'
+              type='email' 
+              placeholder='Email' 
+              onChange={(event: React.FormEvent<HTMLInputElement>) => setEmail(event.currentTarget.value)} 
+            />
+             <label htmlFor='phone'>Phone:</label>
+            <input 
+              id='phone'
+              name='phone'
+              type='tel' 
+              placeholder='Phone'
+              onChange={(event: React.FormEvent<HTMLInputElement>) => setPhone(event.currentTarget.value)} 
+            />
             <label htmlFor="message">Message:</label>
             <textarea
               id="message"
               rows={4}
-              // onChange={( event: React.ChangeEvent<HTMLTextAreaElement>): void => setMessage(event.target.value)}
+              onChange={( event: React.ChangeEvent<HTMLTextAreaElement>): void => setMessage(event.target.value)}
               placeholder="Let us know what you need help with..."
-            /> */}
+            />
+            <button className={styles.submit} type="submit">Send</button>
+          </form>
         </div>
       </div>
     </>
