@@ -42,10 +42,10 @@ const Contact = () => {
             action="/success"
             className={styles.form} 
             data-netlify="true" 
-            method="post"
-            name="contact-us"
+            method="POST"
+            name="contact"
           >
-            <input type="hidden" name="form-name" value="contact-us" />
+            <input type="hidden" name="form-name" value="contact" />
             {formFields.map(({ type, name }) => {
               return (
                 <React.Fragment key={name}>
