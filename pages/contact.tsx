@@ -15,12 +15,12 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
-    const data = { name, email, message };
-    const rawData = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data)});
-    const formData = await rawData.json();    
-  };
+  // const handleSubmit = async (event: React.SyntheticEvent) => {
+  //   event.preventDefault();
+  //   const data = { name, email, message };
+  //   const rawData = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data)});
+  //   const formData = await rawData.json();    
+  // };
 
   return (
     <>
@@ -38,7 +38,14 @@ const Contact = () => {
             <li>Keilor Park VIC 3042 </li>
             <li>AUSTRALIA</li>
           </ul>
-          <form onSubmit={handleSubmit} className={styles.form}>
+          <form
+            action="/success"
+            className={styles.form} 
+            data-netlify="true" 
+            method="post"
+            name="contact-us"
+          >
+            <input type="hidden" name="form-name" value="contact-us" />
             {formFields.map(({ type, name }) => {
               return (
                 <React.Fragment key={name}>
