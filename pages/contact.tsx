@@ -42,16 +42,18 @@ const Contact = () => {
             action="/success"
             className={styles.form} 
             data-netlify="true" 
+            data-netlify-honeypot="bot-field"
             method="POST"
             name="contact"
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />  
             {formFields.map(({ type, name }) => {
               return (
                 <React.Fragment key={name}>
                   <label htmlFor={name}>{startCase(name)}:</label>
                   <input 
                     id={name} 
+                    name={name}
                     type={type} 
                     placeholder={startCase(name)} 
                     onChange={(event: React.FormEvent<HTMLInputElement>) => setName(event.currentTarget.value)} 
