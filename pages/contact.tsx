@@ -38,17 +38,11 @@ const Contact = () => {
             <li>Keilor Park VIC 3042 </li>
             <li>AUSTRALIA</li>
           </ul>
-          <form
-            action="/success"
-            className={styles.form} 
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            method="POST"
-            name="contact-aerodynamic"
-            data-netlify-recaptcha="true"
-          >
-            <input type="hidden" name="form-name" value="contact-aerodynamic" />  
-            {formFields.map(({ type, name }) => {
+          <form action="/success" className={styles.form} data-netlify="true" method="POST" name="contact-aerodynamic">
+            <input type="hidden" name="form-name" value="contact-aerodynamic" />
+            <input type="text" id="name" name="name" />
+            <button className={styles.submit} type="submit">Send</button>
+            {/* {formFields.map(({ type, name }) => {
               return (
                 <React.Fragment key={name}>
                   <label htmlFor={name}>{startCase(name)}:</label>
@@ -61,16 +55,15 @@ const Contact = () => {
                   />
                 </React.Fragment>
               );
-            })}
-
+            })} */}
+{/* 
             <label htmlFor="message">Message:</label>
             <textarea
               id="message"
               rows={4}
               // onChange={( event: React.ChangeEvent<HTMLTextAreaElement>): void => setMessage(event.target.value)}
               placeholder="Let us know what you need help with..."
-            />
-            <button className={styles.submit} type="submit">Send</button>
+            /> */}
           </form>
         </div>
       </div>
