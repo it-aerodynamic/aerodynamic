@@ -36,11 +36,6 @@ const HomePage = ({ homeData }) => {
               })(services)
             }
           </div>
-          <form action="/success" className={styles.form} data-netlify="true" method="POST" name="contact">
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="text" id="name" name="name" />
-            <button className={styles.submit} type="submit">Send</button>
-          </form>
         </div>
       </div>
     </>
