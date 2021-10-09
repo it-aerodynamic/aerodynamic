@@ -38,10 +38,11 @@ const Contact = () => {
             <li>Keilor Park VIC 3042 </li>
             <li>AUSTRALIA</li>
           </ul>
-          <form action="/success" className={styles.form} data-netlify="true" method="POST" name="contact-aerodynamic">
-            <input type="hidden" name="form-name" value="contact-aerodynamic" />
+          <form action="/success" className={styles.form} data-netlify="true" method="POST" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
             <input type="text" id="name" name="name" />
             <button className={styles.submit} type="submit">Send</button>
+          </form>
             {/* {formFields.map(({ type, name }) => {
               return (
                 <React.Fragment key={name}>
@@ -64,7 +65,6 @@ const Contact = () => {
               // onChange={( event: React.ChangeEvent<HTMLTextAreaElement>): void => setMessage(event.target.value)}
               placeholder="Let us know what you need help with..."
             /> */}
-          </form>
         </div>
       </div>
     </>
