@@ -64,7 +64,7 @@ const Contact = () => {
     <>
       <Head>
         <title>Contact us - Aerodynamic</title>
-        <meta name="description" content="This is the page description" />
+        <meta name="description" content="Leave a message and we'll get back to you soon." />
       </Head>
       <div className={styles.pageWrapper}>
         <div className={styles.pageContainer}>
