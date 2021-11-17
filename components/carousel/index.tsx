@@ -25,7 +25,7 @@ const ImageCarousel = ({ slides = [] }: ImageCarouselProps) => {
           return (
             <Carousel.Item key={imageObject.src}>
               <div className={styles.textWrapper}>
-                {title && <h2>{title}</h2>}
+                {title && <h1>{title}</h1>}
                 {subTitle && <h3>{subTitle}</h3>}
               </div>
               <div className={styles.imageWrapper} />

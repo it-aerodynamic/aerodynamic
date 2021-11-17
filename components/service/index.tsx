@@ -35,7 +35,7 @@ const Service = ({title, description}:ServiceProps) => {
           <div className={styles.iconWrapper}>
             <Image className={styles.icon} width="38" height="46" src="/circular-arrows.svg" alt="logo" />
           </div>
-          <h1>{title}</h1>
+          <h3>{title}</h3>
         </div>
         <Fade cascade left>
         <div className={styles.body}>

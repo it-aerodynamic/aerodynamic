@@ -17,8 +17,8 @@ const HomePage = ({ homeData }) => {
   return (
     <>
       <Head>
-        <title>Aerodynamic</title>
-        <meta name="description" content="This is the page description" />
+        <title>Safety in the sky, starts from the ground - Aerodynamic</title>
+        <meta name="description" content="Aerodynamic is an avionics equipment service provider focused on providing solutions for commercial and business jet operators, MRO’s and military customers" />
       </Head>
       <div className={styles.pageWrapper}>
         <ImageCarousel slides={slides} />

@@ -17,7 +17,7 @@
   max-width: 1000px;
 }
 
-.textWrapper h2 {
+.textWrapper h1 {
   color: var(--orange);
   font-size: 2.8rem;
   font-weight: 700;
@@ -32,7 +32,7 @@
   font-weight: 300;
 }
 
-.textWrapper h2,
+.textWrapper h1,
 .textWrapper h3 {
   font-style: italic;
   font-family: 'Lato', sans-serif !important;

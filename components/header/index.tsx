@@ -40,7 +40,7 @@ const Header = ({ sanitySiteProps }: HeaderProps) => {
   return (
     <div className={classNames({ [styles.hidden]: show }, styles.navWrapper)}>
       <nav className={styles.navbarItems}>
-        {src && caption && <a href="/"><h1 className={styles.navbarLogo}><Image alt={caption} height="61" src={src} width="203" /></h1></a>}
+        {src && caption && <a href="/"><div className={styles.navbarLogo}><Image alt={caption} height="61" src={src} width="203" /></div></a>}
         <div className={styles.menuIcon} onClick={menuClickedHandler}>
           <FontAwesomeIcon icon={menuIcon} />
         </div>
