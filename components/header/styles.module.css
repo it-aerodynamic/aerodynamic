@@ -36,16 +36,7 @@
 }
 
 .navMenu {
-  display: grid;
   display: none;
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, auto);
-  justify-content: end;
-  list-style: none;
-  margin-bottom: 0;
-  margin-right: 2rem;
-  text-align: center;
-  width: 70vw;
 }
 
 .navLinks {
@@ -98,28 +89,33 @@
   .navMenu {
     display: flex;
     flex-direction: column;
-    height: 500px;
     left: -100%;
     opacity: 1;
     position: absolute;
-    top: 80px;
+    top: 84px;
     transition: all 0.5s ease;
     width: 100%;
   }
 
   .menuActive {
-    background: var(--black);
+    background: #1c1c1c;
     left: 0;
+    margin: 0;
     opacity: 1;
+    padding: 0;
     transition: all 0.5s ease;
     z-index: 1;
   }
 
-  .navLinks {
+  a.navLinks {
     display: table;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     width: 100%;
+  }
+
+  a.navLinks:hover {
+    background-color: ##303030;
   }
 
   .navbarLogo {
